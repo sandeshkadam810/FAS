@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .username-heading {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 14px;
+            text-align: center;
+            color: #666;
+        }
+
+        .horizontal-line {
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+            margin: 10px 0;
+        }
+
+        .tab-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tab {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .tab-text {
+            margin-right: 10px;
+        }
+
+        .down-arrow::after {
+            content: "▼";
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 340%;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            bottom: -200%;
+        }
+
+        .tab.open .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Adjust the dropdown items to be horizontal */
+        .horizontal-dropdown {
+            display: flex;
+        }
+
+        .horizontal-dropdown .dropdown-item {
+            margin-right: 10px;
+        }
+
+        /* Styling for the forms */
+        .form-container {
+            padding: 10px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .form-inline {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-inline .form-input {
+            margin-right: 5px;
+        }
+
+        .form-year {
+            width: 60px;
+        }
+
+        /* Positioning for the "Add" button */
+        .add-button {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-10%);
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">User Dashboard</div>
+        <h2 class="username-heading">USERNAME</h2>
+        <p class="description">Select the field where you want to add your data</p>
+        <div class="horizontal-line"></div>
+        <div class="tab-container">
+            <!-- Conference Tab -->
+            <div class="tab">
+                <div class="tab-text">Conference</div>
+                <div class="down-arrow"></div>
+                <div class="dropdown-content">
+                    <div class="form-container">
+                        <label class="form-label">Title of Publication:</label>
+                        <input type="text" class="form-input" placeholder="Enter title of publication">
+
+                        <label class="form-label">Primary Author:</label>
+                        <input type="text" class="form-input" placeholder="Enter primary author's name">
+
+                        <label class="form-label">Secondary Author:</label>
+                        <input type="text" class="form-input" placeholder="Enter secondary author's name">
+
+                        <label class="form-label">Name of Conference:</label>
+                        <input type="text" class="form-input" placeholder="Enter conference name">
+
+                        <label class="form-label">Date of Conference:</label>
+                        <input type="date" class="form-input">
+
+                        <label class="form-label">Location of Conference:</label>
+                        <input type="text" class="form-input" placeholder="Enter conference location">
+
+                        <label class="form-label">Proceedings of the Publisher:</label>
+                        <input type="text" class="form-input" placeholder="Enter proceedings publisher">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Research Project Tab -->
+            <div class="tab">
+                <div class="tab-text">Research Project</div>
+                <div class="down-arrow"></div>
+                <div class="dropdown-content">
+                    <div class="form-container">
+                        <label class="form-label">Title of Project:</label>
+                        <input type="text" class="form-input" placeholder="Enter title of project">
+
+                        <label class="form-label">Subject Area:</label>
+                        <input type="text" class="form-input" placeholder="Enter subject area">
+
+                        <label class="form-label">Funding Body:</label>
+                        <input type="text" class="form-input" placeholder="Enter funding body">
+
+                        <label class="form-label">Name of Principal Investigation:</label>
+                        <input type="text" class="form-input" placeholder="Enter principal investigator's name">
+
+                        <label class="form-label">Name of Co-Principal Investigation:</label>
+                        <input type="text" class="form-input" placeholder="Enter co-principal investigator's name">
+
+                        <div class="form-inline">
+                            <label class="form-label">Duration of Project (weeks):</label>
+                            <input type="number" class="form-input form-year">
+                        </div>
+
+                        <label class="form-label">Amount Sanctioned:</label>
+                        <input type="number" class="form-input" placeholder="Enter amount sanctioned">
+
+                        <label class="form-label">Amount Received:</label>
+                        <input type="number" class="form-input" placeholder="Enter amount received">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Books Tab -->
+            <div class="tab">
+                <div class="tab-text">Books</div>
+                <div class="down-arrow"></div>
+                <div class="dropdown-content">
+                    <div class="form-container">
+                        <label class="form-label">Book Title:</label>
+                        <input type="text" class="form-input" placeholder="Enter book title">
+
+                        <div class="form-inline">
+                            <label class="form-label">Chapter Name & Number:</label>
+                            <input type="text" class="form-input" placeholder="Enter chapter name">
+                            <input type="number" class="form-input" style="width: 60px;" placeholder="Chapter number">
+                        </div>
+
+                        <label class="form-label">Primary Author:</label>
+                        <input type="text" class="form-input" placeholder="Enter primary author's name">
+
+                        <label class="form-label">Secondary Author:</label>
+                        <input type="text" class="form-input" placeholder="Enter secondary author's name">
+
+                        <label class="form-label">Book Publisher:</label>
+                        <input type="text" class="form-input" placeholder="Enter book publisher">
+
+                        <label class="form-label">Place of Publication:</label>
+                        <input type="text" class="form-input" placeholder="Enter place of publication">
+
+                        <div class="form-inline">
+                            <label class="form-label">Year of Publication:</label>
+                            <input type="number" class="form-input form-year" placeholder="Enter year">
+                        </div>
+
+                        <label class="form-label">ISBN / ISSN No.:</label>
+                        <input type="text" class="form-input" placeholder="Enter ISBN / ISSN number">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Patents Tab -->
+            <div class="tab">
+                <div class="tab-text">Patents</div>
+                <div class="down-arrow"></div>
+                <div class="dropdown-content">
+                    <div class="form-container">
+                        <label class="form-label">Title of Patent:</label>
+                        <input type="text" class="form-input" placeholder="Enter title of patent">
+
+                        <div class="form-inline">
+                            <label class="form-label">Status:</label>
+                            <input type="radio" name="patentStatus" value="published"> Published
+                            <input type="radio" name="patentStatus" value="filed"> Filed
+                        </div>
+
+                        <label class="form-label">Author:</label>
+                        <input type="text" class="form-input" placeholder="Enter author's name">
+
+                        <label class="form-label">Date of Filing:</label>
+                        <input type="date" class="form-input">
+
+                        <label class="form-label">Date of Award:</label>
+                        <input type="date" class="form-input">
+
+                        <label class="form-label">Application No.:</label>
+                        <input type="text" class="form-input" placeholder="Enter application number">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- "Add" button -->
+    <button class="add-button">Add</button>
+    <script>
+    const tabs = document.querySelectorAll('.tab');
+tabs.forEach(tab => {
+    tab.addEventListener('click', (event) => {
+        if (event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA') {
+            // Close all open tabs
+            tabs.forEach(t => {
+                if (t !== tab) {
+                    t.classList.remove('open');
+                }
+            });
+            // Toggle the clicked tab
+            tab.classList.toggle('open');
+        }
+    });
+});
+</script>
+</body>
+</html>
