@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Appraisal System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tabs-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .tab {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab:hover .down-image {
+            transform: scale(1.2); /* Increase the size on hover */
+        }
+
+        .tab-text {
+            margin-right: 5px;
+        }
+
+        .down-image {
+            width: 20px;
+            height: 20px;
+            background-color: #2f567e; /* Default background color */
+            border-radius: 3px;
+            margin-left: auto; /* Move to the end */
+            padding-block-end: 2px;
+            background-repeat: no-repeat;
+    /* Adjust background size to fit the icon */
+    background-size: cover;
+            transition: transform 0.3s; /* Add transition for smooth hover effect */
+        }
+
+        /* Add background image URL for each tab */
+        .tab:nth-child(1) .down-image {
+            background-image: url('down.jpeg');
+        }
+
+        .tab:nth-child(2) .down-image {
+            background-image: url('down.jpeg');
+        }
+
+        .tab:nth-child(3) .down-image {
+            background-image: url('down.jpeg');
+        }
+
+        .tab:nth-child(4) .down-image {
+            background-image: url('down.jpeg');
+        }
+        .tab:nth-child(5) .down-image {
+            background-image: url('down.jpeg');
+        }
+
+        .tab:nth-child(6) .down-image {
+            background-image: url('down.jpeg');
+        }
+            .tab:nth-child(7) .down-image {
+            background-image: url('down.jpeg');
+        }
+        .tab:nth-child(8) .down-image {
+            background-image: url('down.jpeg');
+        }
+
+        .tab:nth-child(9) .down-image {
+            background-image: url('down.jpeg');
+        
+        }
+        
+
+        /* Add more images for other tabs as needed */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Faculty Appraisal System</div>
+        <div class="tabs-container">
+            <div class="tab">
+                <div class="tab-text">Research Projects</div>
+                <div class="down-image"></div>
+            </div>
+            <div class="tab">
+                <div class="tab-text">Consultancy</div>
+                <div class="down-image"></div>
+            </div>
+            <div class="tab">
+                <div class="tab-text">Books</div>
+                <div class="down-image"></div>
+            </div>
+            <div class="tab">
+                <div class="tab-text">Patents</div>
+                <div class="down-image"></div>
+            </div>
+            <div class="tab">
+                <div class="tab-text">Budget Allocation</div>
+                <div class="down-image"></div>
+            </div>
+            <div class="tab">
+                <div class="tab-text">Faculty Awards</div>
+                <div class="down-image"></div>
+            </div>
+            <div class="tab">
+                <div class="tab-text">Journal</div>
+                <div class="down-image"></div>
+            </div>
+            <div class="tab">
+                <div class="tab-text">Conference</div>
+                <div class="down-image"></div>
+            </div>
+            <div class="tab">
+                <div class="tab-text">Faculty Citation Index</div>
+                <div class="down-image"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
