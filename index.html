@@ -1,119 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css"
+
+
+  <title>Login Page</title>
+  <link rel="icon" type="image/png" href="vitfied_logo.png">
+  <style>
+    body {
+      background-image: url(https://media.istockphoto.com/id/1140879452/photo/office-building-business-lobby-blur-background-with-blurry-glass-window-transparent-wall.jpg?s=170667a&w=0&k=20&c=ROOmf_UU5nkyveQDwzFksulkjgwEbeHqAmFq0X-iul0=);
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+      max-width: 350px;
+      margin: auto;
+      margin-top: 150px;
+      padding: 20px;
+      position: center;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-family: Bebas Neue;
+      text-align: center;
+    }
+    .link{
+      text-align: center;
+    }
+    
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    button[type="submit"] {
+      padding: 10px;
+      background-color: #a0cdeb;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #6cb6e8;
+    }
+  </style>
 </head>
-<body class="body">
-    <header class="header"> 
-<h1> Faculty Appraisal System</h1>
-    </header>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <ul class="navbar-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#C4">Contact</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="profile.html">Register</a></li>
-            </ul>
-            <div class="menu-icon" id="openMenu">&#9776;
-                <div class="sidebar" id="sidebar">
-                    <ul>
-                        <li><a href="#"></a></li>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="reset.html">Change PW</a></li>
-                        <li><a href="add.html">Add</a></li>
-                        <li><a href="login.html">Logout</a></li>
-                    </ul>
-            </div>
-        </div>
-        
-    </nav>
-    <div class="search-container">
-        <input type="text" placeholder="Search by..." id="searchInput">
-        <div class="search-icon">
-            <!-- <i class="fa fa-search"></i> -->
-        </div>
-        <select id="searchOptions">
-            <option value="author">Author</option>
-            <option value="patent">Patent</option>
-            <option value="book">Book</option>
-            <option value="journal">Journal</option>
-            <option value="conference">Conference</option>
-            <option value="project">Project</option>
-        </select>
-    </div>
-    <div class="center-button">
-        <button class="view-database-button"><a href="view.html"  style="text-decoration:none; color: aliceblue;">View Database</a></button>
-    </div>
-    <br><br><br><br><br>
-    <div class="flex-container">
-        <div class="publication">
-            <h2>0</h2>
-            <p>No of Publications</p>
-        </div>
-        <div class="publication">
-            <h2>0</h2>
-            <p>Academic Articles</p>
-        </div>
-        <div class="publication">
-            <h2>0</h2>
-            <p>Books</p>
-        </div>
-        <div class="publication">
-            <h2>0</h2>
-            <p>Patents</p>
-        </div>
-    </div>
-    <br><br><br><br><br>
-    <div class="faq-container">
-        <h2 class="faq-title">FAQ</h2>
-        <div class="faq">
-            <h3 class="faq-question">What is This Site for?</h3>
-            <p class="faq-answer">This site is a platform for sharing and discovering academic publications, research papers, and other scholarly works. It aims to provide a central hub for researchers and scholars to showcase their research and collaborate with others in their fields. Users can browse, search, and access a wide range of authentic academic content.</p>
-            <span class="faq-show" style="font-style: oblique;">Show</span>
-        </div>
-        <div class="faq">
-            <h3 class="faq-question">Do we cover authentic work?</h3>
-            <p class="faq-answer">Yes, we strive to ensure that the content shared on this site is authentic and of high quality. All submissions are reviewed and verified by our team to maintain the integrity of the platform. Additionally, we encourage authors to provide proper citations and references to their sources to uphold academic standards.</p>
-            <span style="font-style: oblique;" class="faq-show">Show</span>
-        </div>
-        <div class="faq">
-            <h3 class="faq-question">How to Log in?</h3>
-            <p class="faq-answer">To log in, click on the "Login" button located at the top right corner of the website. You will be directed to the login page where you can enter your username and password. If you don't have an account, you can create one by clicking on the "Sign Up" link and following the registration process. Once logged in, you can access your personalized dashboard and manage your publications.</p>
-            <span class="faq-show" style="font-style: oblique;">Show</span>
-        </div>
-        <div class="faq">
-            <h3 class="faq-question">How long to add our research paper on the site?</h3>
-            <p class="faq-answer">The time it takes to add your research paper to the site depends on our review process. After submitting your paper, our team will carefully review it for authenticity and adherence to guidelines. Typically, the review process takes between 2 to 5 business days. If your paper meets the criteria, it will be published on the site, and you will receive a notification. In case of any delays or queries, you can contact our support team for assistance.</p>
-            <span class="faq-show" style="font-style: oblique;">Show</span>
-        </div>
-    </div>
-    <br><br><br><br><br><br><br><br>
-    <footer id="C4">
-        <h3>Subscribe to our Newsletter</h3>
-        <form action="#" method="post">
-            <input type="email" class="subscribe-input" placeholder="Your email address" required>
-            <input type="submit" class="subscribe-button" value="Subscribe">
-        </form>
-        <div class="contact-details">
-            <p>Contact us at: contact@yourpublications.com</p>
-            <p>Phone: +1 123-456-7890</p>
-            <p>Address: 123 Publishing Street, Cityville, Countryland</p>
-        </div>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">FAQs</a>
-            <a href="#">About Us</a>
-            <a href="#">Our Publications</a>
-            <!-- Add more links as needed -->
-        </div>
-        <p>&copy; 2023 Your Publications Website. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+
+<body>
+  <div class="login-container">
+    <h1>Login</h1>
+    <form>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Login</button>
+    </form>
+    <br>
+  <div class="link">
+    <a href="/profile.html">Create New Account?</a>
+  </div>
+  </div>
+  <script> const form = document.querySelector('form');
+    const usernameInput = document.querySelector('#username');
+    const passwordInput = document.querySelector('#password');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const username = usernameInput.value;
+      const password = passwordInput.value;
+
+      if (username === 'VIT_STUDENT' && password === '1234') {
+        window.location.href = "home.html";
+      }
+
+      else {
+        alert('Invalid username or password');
+      }
+    });
+  </script>
 </body>
+
 </html>

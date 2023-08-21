@@ -1,0 +1,327 @@
+.header {
+    text-align: center;
+    font-weight: 200;
+    font-size: xx-large; /* Increase the font size for a larger header text */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    background-color: #3498db;
+    padding: 20px 0; /* Increase padding for more height */
+    border-bottom: 1px solid #2980b9;
+    background-image: url(https://media.istockphoto.com/id/1140879452/photo/office-building-business-lobby-blur-background-with-blurry-glass-window-transparent-wall.jpg?s=170667a&w=0&k=20&c=ROOmf_UU5nkyveQDwzFksulkjgwEbeHqAmFq0X-iul0=);
+    background-size: cover;
+    height: 250px; /* Increase the height of the header */
+}
+
+/* Body Style */
+.body {
+    background-color: #a0cdeb; /* Use a lighter background color */
+    margin: 0;
+    padding: 0;
+    min-height: 200px;
+}
+select, input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: Arial, sans-serif;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    padding: 29px;
+    margin-top: 5%;
+    padding-left: 100px;
+    padding-right: 20px;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 10px;
+    padding-left: 10px;
+    font-size: 18px;
+    border: #202021;
+}
+
+/* .search-icon {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #6b0c0c;
+    color: rgb(161, 48, 48);
+    background-image: url(img2.png);
+} */
+.search-icon {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #1e0101;
+    color: rgb(161, 48, 48);
+    /* Set dimensions for the background image */
+    width: 20px;
+    height: 20px;
+    background-image: url(img2.png);
+    background-repeat: no-repeat;
+    /* Adjust background size to fit the icon */
+    background-size: cover;
+}
+
+
+#searchOptions {
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #f0f0f0;
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Style the button */
+.view-database-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1e0101; /* Nice color (you can adjust this) */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.navbar {
+    background-color: #333;
+    color: white;
+    font-size: 23px;
+    position: relative;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+
+}
+
+.navbar-links li {
+    margin-right: 20px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Hamburger Icon Styles */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+/* Style the menu icon */
+#openMenu {
+    font-size: 35px; /* Set the font size */
+    cursor: pointer; /* Add a pointer cursor for interaction */
+    color: #ece0e0; /* Set the color */
+    /* Add other styles if desired, such as padding or margin */
+}
+
+/* .sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    right: -290px;
+    height: 100%;
+    overflow-y: auto;
+    transition: right 0.2s;
+    text-decoration: none;
+    border-bottom:1px solid #1d1212;
+    display: block;
+} */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    right: -290px;
+    height: 100%;
+    overflow-y: auto;
+    transition: right 0.2s;
+    border-bottom: 1px solid #1d1212;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px 0;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #ff6767; /* Hover color for links */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li:last-child {
+    margin-bottom: 0; /* Remove margin from the last list item */
+}
+
+
+
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f7f0ec;
+    padding: 20px;
+    box-sizing: content-box ;
+    border-radius: 15%;
+    padding-left: 5%;
+    padding-inline-end: 3%;
+}
+.flex-container:hover{
+  box-sizing:border-box;
+  height:max-content
+}
+.publication {
+    text-align: center;
+    padding: 10px;
+}
+
+.publication h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.publication p {
+    font-size: 30px;
+    color: #1f044a;
+    margin: 0;
+}
+
+
+
+/* 
+ */
+ .faq-container {
+    width: 800px; /* Adjust the width as desired */
+    margin: 0 auto; /* This centers the container horizontally */
+    padding: 20px; /* Adjust the padding as needed */
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.faq {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    text-align: center;
+}
+
+.faq-answer {
+    font-size: 16px;
+    color: #666;
+    display: none;
+}
+
+.faq-show {
+    cursor: pointer;
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: underline;
+    float: right;
+}
+
+.faq-show:hover {
+    color: #0056b3;
+}
+footer {
+    padding: 20px;
+    text-align: center;
+    background-image: url(https://media.istockphoto.com/id/1140879452/photo/office-building-business-lobby-blur-background-with-blurry-glass-window-transparent-wall.jpg?s=170667a&w=0&k=20&c=ROOmf_UU5nkyveQDwzFksulkjgwEbeHqAmFq0X-iul0=);
+}
+
+h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+
+.subscribe-input {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.subscribe-button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.subscribe-button:hover {
+    background-color: #45a049;
+}
+
+.contact-details p {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.sidebar-active {
+    right: 0px;
+}
