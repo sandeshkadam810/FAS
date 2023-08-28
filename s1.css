@@ -14,7 +14,9 @@
 
 /* Body Style */
 .body {
-    background-color: #a0cdeb; /* Use a lighter background color */
+    background-image: url('GB.jpg'); /* Use a lighter background color */
+    background-size: cover;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     min-height: 200px;
@@ -29,6 +31,7 @@ select, input {
 .search-container {
     display: flex;
     align-items: center;
+    background-color: #f7f0ec;
     padding: 29px;
     margin-top: 5%;
     padding-left: 100px;
@@ -273,7 +276,11 @@ select, input {
 footer {
     padding: 20px;
     text-align: center;
-    background-image: url(https://media.istockphoto.com/id/1140879452/photo/office-building-business-lobby-blur-background-with-blurry-glass-window-transparent-wall.jpg?s=170667a&w=0&k=20&c=ROOmf_UU5nkyveQDwzFksulkjgwEbeHqAmFq0X-iul0=);
+    background-image: url('BG.jpg'); /* Use a lighter background color */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    box-shadow: 0 0 20px #000000b1;
 }
 
 h3 {
