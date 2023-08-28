@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>User Information</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #a0cdeb;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+       body {
+    font-family: Arial, sans-serif;
+    background-color: #a0cdeb;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    padding-top: 100px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-bottom: 50%;
+}
 
-        .registration-container {
+        .user-info-container {
             background-color: #fff;
             padding: 20px;
+            padding-top: 50px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             width: 700px;
-            margin-top: 30px; /* Add margin from the top */
+            margin-top: 30px;
         }
 
         .title {
@@ -30,8 +33,6 @@
             font-weight: bold;
             text-align: center;
             margin-bottom: 10px;
-            margin-top: 550px;
-            
         }
 
         .section-title {
@@ -41,37 +42,18 @@
             margin-bottom: 10px;
         }
 
-        .input-label {
+        .info-label {
             font-weight: bold;
+            margin-top: 10px;
         }
 
-        .input-field {
-            width: 100%;
-            padding: 10px;
+        .info-value {
             margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            outline: none;
-        }
-
-        .select-field {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            outline: none;
         }
 
         .horizontal-line {
             border-top: 1px solid #ccc;
             margin: 20px 0;
-        }
-
-        .checkbox-label {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
         }
 
         .buttons-container {
@@ -80,112 +62,64 @@
             margin-top: 20px;
         }
 
-        .register-button,
-        .go-back-button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .register-button {
-            background-color: #007bff;
-            color: #fff;
+        .go-back-button a {
+            text-decoration: none;
+            color: #000;
         }
 
         .go-back-button {
             background-color: #ccc;
             color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="registration-container">
-        <div class="title">Create new account</div>
+    <div class="user-info-container">
+        <div class="title">User Information</div>
+        
         <div class="section-title">Login Info</div>
-        <label class="input-label" for="email">Email:</label>
-        <input type="text" class="input-field" id="email" placeholder="Enter email">
+        <div class="info-label">Email:</div>
+        <div class="info-value">randomperson@gmail.com</div>
 
-        <!-- ... (rest of the form content remains unchanged) ... -->
-        <label class="input-label" for="password">Password:</label>
-        <input type="password" class="input-field" id="password" placeholder="Enter password">
-
-        <label class="input-label" for="confirmPassword">Confirm Password:</label>
-        <input type="password" class="input-field" id="confirmPassword" placeholder="Confirm password">
+      
 
         <div class="horizontal-line"></div>
         <div class="section-title">Personal Info</div>
-        <label class="input-label" for="name">Name:</label>
-        <input type="text" class="input-field" id="name" placeholder="Enter your name">
+        <div class="info-label">Name:</div>
+        <div class="info-value">ABC XYZ</div>
 
-        <label class="input-label" for="phone">Phone:</label>
-        <input type="tel" class="input-field" id="phone" placeholder="Enter phone number">
+        <div class="info-label">Phone:</div>
+        <div class="info-value">123456789</div>
 
-        <label class="input-label" for="organization">Organisation:</label>
-        <input type="text" class="input-field" id="organization" placeholder="Enter organization">
+        <div class="info-label">Organisation:</div>
+        <div class="info-value">Example Organization</div>
 
-        <label class="input-label" for="country">Country:</label>
-        <select class="select-field" id="country">
-            <!-- Option list with countries (you can use JavaScript to populate this) -->
-            <option value="country1">India</option>
-            <option value="country2">United States</option>
-            <option value="country3">Canada</option>
-            <option value="country4">United Kingdom</option>
-            <option value="country5">Australia</option>
-            <option value="country6">Germany</option>
-            <option value="country7">France</option>
-            <option value="country8">Japan</option>
-            <option value="country9">China</option>
-            <option value="country10">Brazil</option>
-            <option value="country11">Russia</option>
-            <option value="country12">South Africa</option>
-            <option value="country13">South Korea</option>
-            <option value="country14">Mexico</option>
-            <option value="country15">Italy</option>
-            <option value="country16">Spain</option>
-            <option value="country17">Nigeria</option>
-            <option value="country18">Argentina</option>
-            <option value="country19">Turkey</option>
-            <option value="country20">Indonesia</option>
+        <div class="info-label">Country:</div>
+        <div class="info-value">INDIA</div>
+
        
-        <!-- ... (rest of the form content remains unchanged) ... -->
-    </div>
-
-
-
-
-
-
-
-            <
-            <!-- ... -->
-        </select>
 
         <div class="horizontal-line"></div>
         <div class="section-title">External Profile</div>
-        <label class="input-label" for="googleScholarID">Google Scholar ID:</label>
-        <input type="text" class="input-field" id="googleScholarID" placeholder="Enter Google Scholar ID">
+        <div class="info-label">Google Scholar ID:</div>
+        <div class="info-value">1234567890</div>
 
-        <label class="input-label" for="dblpID">DBLP ID:</label>
-        <input type="text" class="input-field" id="dblpID" placeholder="Enter DBLP ID">
+        <div class="info-label">DBLP ID:</div>
+        <div class="info-value">dblp123</div>
 
-        <label class="input-label" for="orcidID">ORCID ID:</label>
-        <input type="text" class="input-field" id="orcidID" placeholder="Enter ORCID ID">
+        <div class="info-label">ORCID ID:</div>
+        <div class="info-value">orcid5678</div>
 
-        <label class="input-label" for="openreviewID">OpenReview ID:</label>
-        <input type="text" class="input-field" id="openreviewID" placeholder="Enter OpenReview ID">
+        <div class="info-label">OpenReview ID:</div>
+        <div class="info-value">openreviewxyz</div>
 
-        <div class="horizontal-line"></div>
-        <div class="section-title">Verification</div>
-        <label class="input-label" for="captcha">Captcha:       <nbsp>31Wrfg</nbsp></label>
-        <input type="text" class="input-field" id="captcha" placeholder="Enter captcha">
+       
 
-        <label class="checkbox-label">
-            <input type="checkbox" id="agreeCheckbox">
-            <span>I agree to the terms and conditions</span>
-        </label>
         <div class="buttons-container">
-            <button class="register-button"><a href="index.html">Register</a></button>
             <button class="go-back-button"><a href="index.html">Go back</a></button>
         </div>
     </div>

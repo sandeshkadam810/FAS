@@ -22,6 +22,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+const faqShowButtons = document.querySelectorAll(".faq-show");
+
+        faqShowButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const answer = button.nextElementSibling;
+                answer.classList.toggle("hidden");
+            });
+        });
+
 
 
 
