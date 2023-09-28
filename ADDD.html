@@ -1,250 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>User Dashboard</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-    background-color: #f0f0f0;
-  }
-  
-  .dashboard-box {
-    width: 720px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .username {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .data-field {
-    font-size: 12px;
-    margin-top: 20px;
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 60vh;
+        background-color: #f0f0f0;
+      }
 
-  .tab {
-    margin-top: 20px;
-    cursor: pointer;
-    color: #007bff;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .tab:hover {
-    background-color: #0056b3;
-  }
-  
-  .tab-arrow {
-    display: inline-block;
-    transform: rotate(0deg);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .add-button {
-    position: absolute;
-    top: 50%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 30px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .add-button:hover {
-  color: #007bff; /* Change text color on hover */
-  background-color: #f0f0f0; /* Change background color on hover */
-  border: 1px solid #007bff; /* Add a border on hover */
-}
-  .tab-content {
-    display: none;
-    margin-top: 20px;
-  }
-  
-  .tab-content input,
-  .tab-content textarea {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .tab.active .tab-arrow {
-    transform: rotate(180deg);
-  }
-  
-  .tab.active + .tab-content {
-    display: block;
-  }
-  
-  .tab-content label {
-    text-align: left;
-    display: block;
-    margin-bottom: 5px;
-  }
-  .radio-options {
-    text-align: left;
-  }
-  .radio-option {
-    margin-right: 20px; /* Adjust the spacing as needed */
-  }
-</style>
-</head>
-<body>
-<div class="dashboard-box">
-  <div class="username">Username</div>
-  <div class="data-field">Select the field where you want to add your data</div>
-  
-  <div class="tab" onclick="toggleTab(this)">
-    Conference
-    <span class="tab-arrow">▼</span>
-    <button class="add-button">Add</button>
-  </div>
-  <div class="tab-content">
-    <label for="titleInput">Title of Publication</label>
-    <input type="text" id="titleInput" placeholder="Enter title">
-    <label for="primaryAuthorInput">Primary Author</label>
-    <input type="text" id="primaryAuthorInput" placeholder="Enter primary author">
-    <label for="secondaryAuthorInput">Secondary Author</label>
-    <input type="text" id="secondaryAuthorInput" placeholder="Enter secondary author">
-    <label for="conferenceNameInput">Name of Conference</label>
-    <input type="text" id="conferenceNameInput" placeholder="Enter conference name">
-    <label for="conferenceDateInput">Date of Conference</label>
-    <input type="text" id="conferenceDateInput" placeholder="dd-mm-yyyy">
-    <label for="conferenceLocationInput">Location</label>
-    <input type="text" id="conferenceLocationInput" placeholder="Enter location">
-    <label for="proceedingsInput">Proceedings of the Publisher</label>
-    <input type="text" id="proceedingsInput" placeholder="Enter proceedings publisher">
-  </div>
-  
-  <div class="tab" onclick="toggleTab(this)">
-    Research Project
-    <span class="tab-arrow">▼</span>
-    <button class="add-button">Add</button>
-  </div>
-  <div class="tab-content">
-    <label for="projectTitleInput">Title of Project</label>
-    <input type="text" id="projectTitleInput" placeholder="Enter project title">
-    
-    <label for="subjectAreaInput">Subject Area</label>
-    <input type="text" id="subjectAreaInput" placeholder="Enter subject area">
-    
-    <label for="fundingBodyInput">Funding Body</label>
-    <input type="text" id="fundingBodyInput" placeholder="Enter funding body">
-    
-    <label for="principalInvestigatorInput">Name of Principal Investigator</label>
-    <input type="text" id="principalInvestigatorInput" placeholder="Enter principal investigator">
-    
-    <label for="coPrincipalInvestigatorInput">Name of Co-Principal Investigator</label>
-    <input type="text" id="coPrincipalInvestigatorInput" placeholder="Enter co-principal investigator">
-    
-    <label for="durationInput">Duration of Project (weeks)</label>
-    <input type="number" id="durationInput" placeholder="Enter duration in weeks">
-    
-    <label for="amountSanctionedInput">Amount Sanctioned</label>
-    <input type="number" id="amountSanctionedInput" placeholder="Enter amount sanctioned">
-    
-    <label for="amountReceivedInput">Amount Received</label>
-    <input type="number" id="amountReceivedInput" placeholder="Enter amount received">
-  </div>
-  
-  <div class="tab" onclick="toggleTab(this)">
-    Books
-    <span class="tab-arrow">▼</span>
-    <button class="add-button">Add</button>
-  </div>
-  <div class="tab-content">
-    <label for="bookTitleInput">Book Title</label>
-    <input type="text" id="bookTitleInput" placeholder="Enter book title">
-    
-    <label for="chapterNameInput">Chapter Name</label>
-    <input type="text" id="chapterNameInput" placeholder="Enter chapter name">
-    
-    <label for="chapterNumberInput">Chapter Number</label>
-    <input type="text" id="chapterNumberInput" placeholder="Enter chapter number">
-    
-    <label for="primaryAuthorInput">Primary Author</label>
-    <input type="text" id="primaryAuthorInput" placeholder="Enter primary author">
-    
-    <label for="secondaryAuthorInput">Secondary Author</label>
-    <input type="text" id="secondaryAuthorInput" placeholder="Enter secondary author">
-    
-    <label for="bookPublisherInput">Book Publisher</label>
-    <input type="text" id="bookPublisherInput" placeholder="Enter book publisher">
-    
-    <label for="placeOfPublicationInput">Place of Publication</label>
-    <input type="text" id="placeOfPublicationInput" placeholder="Enter place of publication">
-    
-    <label for="yearOfPublicationInput">Year of Publication</label>
-    <input type="text" id="yearOfPublicationInput" placeholder="Enter year of publication">
-    
-    <label for="isbnInput">ISBN/ISSN NO:</label>
-    <input type="text" id="isbnInput" placeholder="Enter ISBN/ISSN number">
-  </div>
-  
-  <div class="tab" onclick="toggleTab(this)">
-    Patents
-    <span class="tab-arrow">▼</span>
-    
-  </div>
-  <div class="tab-content">
-    <label for="patentTitleInput">Title of Patent</label>
-    <input type="text" id="patentTitleInput" placeholder="Enter patent title">
-    
-    <div class="radio-options">
-      <label for="statusInput">Status</label>
-      <span class="radio-option" style="display: inline-block;">
-        <input type="radio" id="publishedRadio" name="status" value="published">
-        <label for="publishedRadio">Published</label>
-      </span>
-      <span class="radio-option" style="display: inline-block;">
-        <input type="radio" id="filedRadio" name="status" value="filed">
-        <label for="filedRadio">Filed</label>
-      </span>
+      .dashboard-box {
+        width: 720px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+      }
+
+      .username {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .data-field {
+        font-size: 12px;
+        margin-top: 20px;
+      }
+
+      .tab {
+        margin-top: 20px;
+        cursor: pointer;
+        color: #007bff;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .tab:hover {
+        background-color: #0056b3;
+      }
+
+      .tab-arrow {
+        display: inline-block;
+        transform: rotate(0deg);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .add-button {
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .add-button:hover {
+        color: #007bff; /* Change text color on hover */
+        background-color: #f0f0f0; /* Change background color on hover */
+        border: 1px solid #007bff; /* Add a border on hover */
+      }
+
+      .tab-content {
+        display: none;
+        margin-top: 20px;
+      }
+
+      .tab-content input,
+      .tab-content textarea {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .tab.active .tab-arrow {
+        transform: rotate(180deg);
+      }
+
+      .tab.active + .tab-content {
+        display: block;
+      }
+
+      .tab-content label {
+        text-align: left;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .radio-options {
+        text-align: left;
+      }
+      .radio-option {
+        margin-right: 20px; /* Adjust the spacing as needed */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard-box">
+      <div class="username">Username</div>
+      <div class="data-field">
+        Select the field where you want to add your data
+      </div>
+
+      <div class="tab" onclick="toggleTab(this)">
+        Conference
+        <span class="tab-arrow">▼</span>
+        <button class="add-button">Add</button>
+      </div>
+      <div class="tab-content">
+        <label for="titleInput">Title of Publication</label>
+        <input type="text" id="titleInput" placeholder="Enter title" />
+        <label for="primaryAuthorInput">Primary Author</label>
+        <input
+          type="text"
+          id="primaryAuthorInput"
+          placeholder="Enter primary author"
+        />
+        <label for="secondaryAuthorInput">Secondary Author</label>
+        <input
+          type="text"
+          id="secondaryAuthorInput"
+          placeholder="Enter secondary author"
+        />
+        <label for="conferenceNameInput">Name of Conference</label>
+        <input
+          type="text"
+          id="conferenceNameInput"
+          placeholder="Enter conference name"
+        />
+        <label for="conferenceDateInput">Date of Conference</label>
+        <input type="text" id="conferenceDateInput" placeholder="dd-mm-yyyy" />
+        <label for="conferenceLocationInput">Location</label>
+        <input
+          type="text"
+          id="conferenceLocationInput"
+          placeholder="Enter location"
+        />
+        <label for="proceedingsInput">Proceedings of the Publisher</label>
+        <input
+          type="text"
+          id="proceedingsInput"
+          placeholder="Enter proceedings publisher"
+        />
+      </div>
+
+      <div class="tab" onclick="toggleTab(this)">
+        Research Project
+        <span class="tab-arrow">▼</span>
+        <button class="add-button">Add</button>
+      </div>
+      <div class="tab-content">
+        <label for="projectTitleInput">Title of Project</label>
+        <input
+          type="text"
+          id="projectTitleInput"
+          placeholder="Enter project title"
+        />
+
+        <label for="subjectAreaInput">Subject Area</label>
+        <input
+          type="text"
+          id="subjectAreaInput"
+          placeholder="Enter subject area"
+        />
+
+        <label for="fundingBodyInput">Funding Body</label>
+        <input
+          type="text"
+          id="fundingBodyInput"
+          placeholder="Enter funding body"
+        />
+
+        <label for="principalInvestigatorInput"
+          >Name of Principal Investigator</label
+        >
+        <input
+          type="text"
+          id="principalInvestigatorInput"
+          placeholder="Enter principal investigator"
+        />
+
+        <label for="coPrincipalInvestigatorInput"
+          >Name of Co-Principal Investigator</label
+        >
+        <input
+          type="text"
+          id="coPrincipalInvestigatorInput"
+          placeholder="Enter co-principal investigator"
+        />
+
+        <label for="durationInput">Duration of Project (weeks)</label>
+        <input
+          type="number"
+          id="durationInput"
+          placeholder="Enter duration in weeks"
+        />
+
+        <label for="amountSanctionedInput">Amount Sanctioned</label>
+        <input
+          type="number"
+          id="amountSanctionedInput"
+          placeholder="Enter amount sanctioned"
+        />
+
+        <label for="amountReceivedInput">Amount Received</label>
+        <input
+          type="number"
+          id="amountReceivedInput"
+          placeholder="Enter amount received"
+        />
+      </div>
+
+      <div class="tab" onclick="toggleTab(this)">
+        Books
+        <span class="tab-arrow">▼</span>
+        <button class="add-button">Add</button>
+      </div>
+      <div class="tab-content">
+        <label for="bookTitleInput">Book Title</label>
+        <input type="text" id="bookTitleInput" placeholder="Enter book title" />
+
+        <label for="chapterNameInput">Chapter Name</label>
+        <input
+          type="text"
+          id="chapterNameInput"
+          placeholder="Enter chapter name"
+        />
+
+        <label for="chapterNumberInput">Chapter Number</label>
+        <input
+          type="text"
+          id="chapterNumberInput"
+          placeholder="Enter chapter number"
+        />
+
+        <label for="primaryAuthorInput">Primary Author</label>
+        <input
+          type="text"
+          id="primaryAuthorInput"
+          placeholder="Enter primary author"
+        />
+
+        <label for="secondaryAuthorInput">Secondary Author</label>
+        <input
+          type="text"
+          id="secondaryAuthorInput"
+          placeholder="Enter secondary author"
+        />
+
+        <label for="bookPublisherInput">Book Publisher</label>
+        <input
+          type="text"
+          id="bookPublisherInput"
+          placeholder="Enter book publisher"
+        />
+
+        <label for="placeOfPublicationInput">Place of Publication</label>
+        <input
+          type="text"
+          id="placeOfPublicationInput"
+          placeholder="Enter place of publication"
+        />
+
+        <label for="yearOfPublicationInput">Year of Publication</label>
+        <input
+          type="text"
+          id="yearOfPublicationInput"
+          placeholder="Enter year of publication"
+        />
+
+        <label for="isbnInput">ISBN/ISSN NO:</label>
+        <input
+          type="text"
+          id="isbnInput"
+          placeholder="Enter ISBN/ISSN number"
+        />
+      </div>
+
+      <div class="tab" onclick="toggleTab(this)">
+        Patents
+        <span class="tab-arrow">▼</span>
+      </div>
+      <div class="tab-content">
+        <label for="patentTitleInput">Title of Patent</label>
+        <input
+          type="text"
+          id="patentTitleInput"
+          placeholder="Enter patent title"
+        />
+
+        <div class="radio-options">
+          <label for="statusInput">Status</label>
+          <span class="radio-option" style="display: inline-block">
+            <input
+              type="radio"
+              id="publishedRadio"
+              name="status"
+              value="published"
+            />
+            <label for="publishedRadio">Published</label>
+          </span>
+          <span class="radio-option" style="display: inline-block">
+            <input type="radio" id="filedRadio" name="status" value="filed" />
+            <label for="filedRadio">Filed</label>
+          </span>
+        </div>
+        <br /><br />
+
+        <label for="authorInput">Author</label>
+        <input type="text" id="authorInput" placeholder="Enter author" />
+
+        <label for="filingDateInput">Date of Filing</label>
+        <input type="date" id="filingDateInput" />
+
+        <label for="awardDateInput">Date of Award</label>
+        <input type="date" id="awardDateInput" />
+
+        <label for="applicationNoInput">Application No:</label>
+        <input
+          type="text"
+          id="applicationNoInput"
+          placeholder="Enter application number"
+        />
+      </div>
+      <button class="add-button">Add</button>
+
+      <div class="tab" onclick="toggleTab(this)">
+        Faculty Award
+        <span class="tab-arrow">▼</span>
+      </div>
+      <div class="tab-content">
+        <form>
+          <label for="facultyNameInput">Faculty Name:</label>
+          <input
+            type="text"
+            id="facultyNameInput"
+            placeholder="Enter faculty name"
+            required
+          /><br />
+
+          <label for="awardReceivedInput">Award Received:</label>
+          <input
+            type="text"
+            id="awardReceivedInput"
+            placeholder="Enter award received"
+            required
+          /><br />
+
+          <label for="awardingBodyInput">Awarding Body:</label>
+          <input
+            type="text"
+            id="awardingBodyInput"
+            placeholder="Enter awarding body"
+            required
+          /><br />
+
+          <label for="dateAwardedInput">Date Awarded:</label>
+          <input
+            type="text"
+            id="dateAwardedInput"
+            placeholder="Enter date awarded"
+            required
+          /><br />
+
+          <label for="detailsInput">Details of Award:</label>
+          <input
+            type="text"
+            id="detailsInput"
+            placeholder="Enter details of award"
+            required
+          /><br />
+
+          <button class="add-button">Add</button>
+        </form>
+      </div>
+
+      <div class="tab" onclick="toggleTab(this)">
+        Journal
+        <span class="tab-arrow">▼</span>
     </div>
-   <br><br>
-   
-    <label for="authorInput">Author</label>
-    <input type="text" id="authorInput" placeholder="Enter author">
+    <div class="tab-content">
+        <form>
+            <label for="titleOfPublication">Title of Publication:</label>
+            <input type="text" id="titleOfPublication" name="titleOfPublication" required /><br />
     
-    <label for="filingDateInput">Date of Filing</label>
-    <input type="date" id="filingDateInput">
+            <label for="primaryAuthor">Primary Author:</label>
+            <input type="text" id="primaryAuthor" name="primaryAuthor" required /><br />
     
-    <label for="awardDateInput">Date of Award</label>
-    <input type="date" id="awardDateInput">
+            <label for="secondaryAuthor">Secondary Author:</label>
+            <input type="text" id="secondaryAuthor" name="secondaryAuthor" /><br />
     
-    <label for="applicationNoInput">Application No:</label>
-    <input type="text" id="applicationNoInput" placeholder="Enter application number">
+            <label for="nameOfPublication">Name of Publication:</label>
+            <input type="text" id="nameOfPublication" name="nameOfPublication" required /><br />
+    
+            <label for="areaOfSpecialization">Area of Specialization:</label>
+            <input type="text" id="areaOfSpecialization" name="areaOfSpecialization" required /><br />
+    
+            
+    
+            
+    
+            <label for="monthOfPublication">Month of Publication:</label>
+            <input type="text" id="monthOfPublication" name="monthOfPublication" required /><br />
+    
+            <label for="dateOfPublication">Date of Publication:</label>
+            <input type="date" id="dateOfPublication" name="dateOfPublication" required /><br />
+    
+            <label for="volume">Volume:</label>
+            <input type="text" id="volume" name="volume" /><br />
+    
+            <label for="isbnNo">ISBN No:</label>
+            <input type="text" id="isbnNo" name="isbnNo" /><br />
+    
+            <button class="add-button" type="submit">Add</button>
+        </form>
+    </div>
+    
+    <div class="tab" onclick="toggleTab(this)">
+      Conference/Workshop/Seminar Attended
+      <span class="tab-arrow">▼</span>
   </div>
-  <button class="add-button">Add</button>
+  <div class="tab-content">
+      <form>
+          <label for="authorName">Name of Author:</label>
+          <input type="text" id="authorName" name="authorName" required /><br />
+  
+          <label for="eventName">Name of Conference/Workshop/Seminar:</label>
+          <input type="text" id="eventName" name="eventName" required /><br />
+  
+          <label style="display: inline-block; vertical-align: margin: ;">Event Type (National/International):</label>
+<label style="display: inline-block; vertical-align: middle;">
+    <input type="radio" id="nationalEvent" name="eventType" value="National" required style="vertical-align: middle;" />
+    National
+</label>
+<label style="display: inline-block; vertical-align: middle;">
+    <input type="radio" id="internationalEvent" name="eventType" value="International" required style="vertical-align: middle;" />
+    International
+</label>
+
+  
+          <label for="eventDates">Dates:</label>
+          <input type="date" id="eventDates" name="eventDates" placeholder="e.g., June 1-3, 2023" required /><br />
+  
+          <label for="eventPlace">Place:</label>
+          <input type="text" id="eventPlace" name="eventPlace" required /><br />
+  
+          <label for="eventSubjectArea">Subject Area:</label>
+          <input type="text" id="eventSubjectArea" name="eventSubjectArea" required /><br />
+  
+          <button class="add-button" type="submit">Add</button>
+      </form>
+  </div>
+  
+      
+
+      
+  <div class="tab" onclick="toggleTab(this)">
+    Conferences/Workshop/Seminars Organized
+    <span class="tab-arrow">▼</span>
+  
+</div>
+<div class="tab-content" >
+    <form>
+        <label for="eventName">Name of Conference/Workshop/Seminar:</label>
+        <input type="text" id="eventName" name="eventName" required /><br />
+
+        <label for="eventLocation">National/International/State/College:</label>
+        <input type="text" id="eventLocation" name="eventLocation" required /><br />
+
+        <label for="sponsoringAgency">Sponsoring Agency:</label>
+        <input type="text" id="sponsoringAgency" name="sponsoringAgency" required /><br />
+
+        <label for="organizingFaculty">Organizing Faculty member:</label>
+        <input type="text" id="organizingFaculty" name="organizingFaculty" required /><br />
+
+        <label for="eventDates">Dates:</label>
+        <input type="datetime-local" id="eventDates" name="eventDates" placeholder="e.g., June 1-3, 2023" required /><br />
+
+        <label for="eventPlace">Place:</label>
+        <input type="text" id="eventPlace" name="eventPlace" required /><br />
+
+        <label for="eventSubjectArea">Subject Area:</label>
+        <input type="text" id="eventSubjectArea" name="eventSubjectArea" required /><br />
+
+        <label for="participantCount">No of Participants:</label>
+        <input type="number" id="participantCount" name="participantCount" required /><br />
+        <button class="add-button" type="submit">Add</button>
+    </form>
 </div>
 
-<script>
-  function toggleTab(tab) {
-    tab.classList.toggle("active");
-  }
-</script>
-</body>
+
+      
+<div class="tab" onclick="toggleTab(this)">
+  Faculty Citation Index
+  <span class="tab-arrow">▼</span>
+  <button class="add-button">Add</button>
+</div>
+<div class="tab-content" >
+  <form>
+      <label for="facultyName">Name of Faculty:</label>
+      <input type="text" id="facultyName" name="facultyName" required /><br />
+
+      <label for="hIndex">h-index:</label>
+      <input type="text" id="hIndex" name="hIndex" required /><br />
+
+      <label for="scopusNo">No of Scopus Publications:</label>
+      <input type="text" id="scopusNo" name="scopusNo" required /><br />
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required /><br />
+
+      <label for="department">Department:</label>
+      <input type="text" id="department" name="department" required /><br />
+
+      <button class="add-button" type="submit">Add</button>
+  </form>
+</div>
+
+
+    <!---->
+    <script>
+      function toggleTab(tab) {
+        tab.classList.toggle("active");
+      }
+    </script>
+  </body>
 </html>
